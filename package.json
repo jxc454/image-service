@@ -1,0 +1,33 @@
+{
+  "name": "image-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "./node_modules/.bin/prettier - single-quote - trailing-comma es5 - tab-width 4 - write '*.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/config": "0.0.39",
+    "@types/koa": "^2.13.4",
+    "@types/koa-router": "^7.4.4",
+    "@types/mime-types": "^2.1.1",
+    "eslint": "^8.0.0",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1006.0",
+    "config": "^3.3.6",
+    "koa": "^2.13.3",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.1.1",
+    "mime-types": "^2.1.33"
+  }
+}

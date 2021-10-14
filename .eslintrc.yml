@@ -14,5 +14,5 @@ rules:
   curly: error
   quotes:
     - error
-    - double
+    - single
 #  no-console: error -- disabled until logger is implemented

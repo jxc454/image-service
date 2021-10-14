@@ -1,5 +1,5 @@
 aws:
   region: AWS_REGION
   bucket: S3_BUCKET
-  accessKeyId: AKIA3FP7WA57DX4KRUWC
-  secretAccessKey: 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
+  accessKeyId: AWS_ACCESS_KEY_ID
+  secretAccessKey: AWS_SECRET_ACCESS_KEY

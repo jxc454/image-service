@@ -1,3 +1,5 @@
 aws:
   region: !!null
   bucket: !!null
+  accessKeyId: !!null
+  secretAccessKey: !!null

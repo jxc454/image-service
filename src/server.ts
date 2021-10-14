@@ -1,21 +1,29 @@
-import Koa from "koa";
-import koaBody from "koa-body";
-import Router from "koa-router";
-import { uploadFile } from "./images/upload";
+import path from 'path'
 
-const app = new Koa();
+import Koa from 'koa'
+import koaBody from 'koa-body'
+import Router from 'koa-router'
+import serve from 'koa-static'
+import send from 'koa-send'
 
-app.use(koaBody({ multipart: true }));
+import { uploadFile } from './images/upload'
 
-const router = new Router({ prefix: "/api" });
+// const readFile = promisify(fs.readFile)
 
-router.post("/images/upload", uploadFile);
-router.get("/", async (ctx, next) => {
-  ctx.body = "Howdy";
-  await next();
-});
-// router.get("/documents/download", downloadArchive);
-app.use(router.routes());
-app.use(router.allowedMethods());
+const app = new Koa()
 
-export default app;
+app.use(koaBody({ multipart: true }))
+app.use(serve(path.join(__dirname, 'public')))
+
+const router = new Router()
+
+router.post('/images/upload', uploadFile)
+
+app.use(router.routes())
+app.use(router.allowedMethods())
+
+app.use((ctx) => {
+  send(ctx, './public/index.html')
+})
+
+export default app
